@@ -1,325 +1,428 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namira Nurpatimah | Portfolio</title>
+    <title>Namira Nurpatimah - Web & Mobile Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .bg-blob {
-            position: fixed;
-            filter: blur(80px);
-            z-index: -1;
-            opacity: 0.6;
+        body { background-color: #fafafa; }
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+        }
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            background-color: #eef2ff;
+            color: #4f46e5;
+            font-size: 0.75rem;
+            font-family: monospace;
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="text-slate-800 font-sans antialiased selection:bg-purple-500 selection:text-white overflow-x-hidden bg-slate-50 relative">
+<body class="text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
 
-    <!-- Latar Belakang Berwarna (Blobs) -->
-    <div class="bg-blob bg-blue-300 w-96 h-96 rounded-full top-[-10%] left-[-10%] mix-blend-multiply"></div>
-    <div class="bg-blob bg-purple-300 w-96 h-96 rounded-full top-[20%] right-[-10%] mix-blend-multiply"></div>
-    <div class="bg-blob bg-pink-300 w-96 h-96 rounded-full bottom-[-10%] left-[20%] mix-blend-multiply"></div>
-
-    <!-- Header Section -->
-    <header class="py-20 px-6 md:py-32" data-aos="fade-down" data-aos-duration="1000">
-        <div class="max-w-5xl mx-auto text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 tracking-tight mb-3">
-                Namira Nurpatimah
-            </h1>
-            <p class="text-lg md:text-xl text-indigo-600 font-semibold tracking-wide uppercase">Programmer &bull; Web & Mobile Developer</p>
-        </div>
-
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-14 bg-white/60 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white shadow-xl">
-            <!-- Foto Profil -->
-            <div class="flex-shrink-0 relative group cursor-pointer">
-                <div class="absolute inset-0 bg-gradient-to-tr from-purple-500 to-pink-500 rounded-full blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
-                <img src="woman.png" alt="Foto Profil Namira Nurpatimah" class="relative w-36 h-36 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-lg transform group-hover:scale-105 transition duration-500"/>
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="#" class="text-slate-900 font-bold text-xl tracking-tight">na<span class="text-brand-600">.mi</span></a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+                <a href="#tentang" class="hover:text-brand-600 transition-colors">Tentang</a>
+                <a href="#pendidikan" class="hover:text-brand-600 transition-colors">Pendidikan</a>
+                <a href="#keahlian" class="hover:text-brand-600 transition-colors">Keahlian</a>
+                <a href="#proyek" class="hover:text-brand-600 transition-colors">Proyek</a>
+                <a href="#riwayat" class="hover:text-brand-600 transition-colors">Riwayat</a>
             </div>
+            <div class="flex items-center gap-3">
+                <a href="https://github.com/nmranf12" target="_blank" class="text-slate-600 hover:text-brand-600 text-lg transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/namiranf" target="_blank" class="text-slate-600 hover:text-brand-600 text-lg transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:namiranurpatimah23@gmail.com" class="px-5 py-2.5 text-sm font-medium bg-slate-900 text-white rounded-full hover:bg-brand-600 transition-colors ml-2">
+                    Hubungi Saya &rarr;
+                </a>
+            </div>
+        </div>
+    </nav>
 
-            <!-- Teks Perkenalan -->
-            <div class="flex-1 text-center md:text-left">
-                <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg mb-6">
-                    Halo! Nama saya <strong>Namira Nurpatimah</strong>, Lulusan S1 Sistem Informasi serta Web & Mobile Developer. Saya memiliki ketertarikan dalam membangun aplikasi web dan mobile yang tidak hanya fungsional, tetapi juga mudah digunakan. Saya menggabungkan logika pemrograman, pengembangan sistem, pemeliharaan IT support, dan desain UI/UX untuk menghasilkan solusi digital yang efektif dan intuitif. Dalam portofolio ini, saya menampilkan beberapa project yang merepresentasikan pengalaman dan kemampuan saya dalam membangun produk digital.
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 bg-grid min-h-[90vh] flex items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="tag-pill mb-6">
+                    <span class="text-brand-500">*</span> $ whoami
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-slate-900 leading-tight mb-6">
+                    Namira Nurpatimah, <br>
+                    <span class="text-slate-700 text-4xl md:text-5xl block mt-2">Web & Mobile Developer.</span>
+                </h1>
+                <p class="text-slate-600 text-lg mb-8 leading-relaxed max-w-lg">
+                   Lulusan S1 Sistem Informasi yang berfokus pada pengembangan aplikasi web dan mobile, dengan pengalaman membangun sistem yang fungsional, responsif, dan mudah digunakan.
                 </p>
-                <div class="flex flex-wrap gap-3 justify-center md:justify-start text-sm font-medium">
-                    <span class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full border border-slate-200 shadow-sm text-slate-700"><i class="fas fa-map-marker-alt text-indigo-500"></i> Cianjur, Indonesia</span>
-                    <a href="mailto:namiranurpatimah23@gmail.com" class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:text-indigo-600 transition-all"><i class="fas fa-envelope text-pink-500"></i> Email</a>
-                    <a href="https://www.linkedin.com/in/namiranf" target="_blank" class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:text-blue-700 transition-all"><i class="fab fa-linkedin text-blue-600"></i> LinkedIn</a>
-                    <a href="https://github.com/nmranf12" target="_blank" class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-full border border-slate-200 shadow-sm hover:text-black transition-all"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <main class="max-w-5xl mx-auto px-6 mb-24 space-y-24 relative z-10">
-        
-        <!-- Technical & Soft Skills Section -->
-        <section data-aos="fade-up" class="bg-white/60 backdrop-blur-md p-8 rounded-3xl border border-white shadow-lg space-y-8">
-            <h2 class="text-2xl font-bold text-slate-800 tracking-tight flex items-center gap-2"><i class="fas fa-magic text-purple-500"></i> Technical & Interpersonal Skills</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Bahasa Pemrograman -->
-                <div class="space-y-3">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-indigo-600 flex items-center gap-2"><i class="fas fa-code"></i> Bahasa Pemrograman</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold shadow-sm">PHP</span>
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold shadow-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-semibold shadow-sm">TypeScript</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold shadow-sm">Kotlin</span>
-                        <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold shadow-sm">Java</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-semibold shadow-sm">Python</span>
-                        <span class="px-3 py-1 bg-slate-200 text-slate-700 rounded-full text-xs font-semibold shadow-sm">C++</span>
-                    </div>
-                </div>
-
-                <!-- Framework & Library -->
-                <div class="space-y-3">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-purple-600 flex items-center gap-2"><i class="fas fa-layer-group"></i> Framework & Tech</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold shadow-sm">Laravel</span>
-                        <span class="px-3 py-1 bg-rose-100 text-rose-700 rounded-full text-xs font-semibold shadow-sm">CodeIgniter</span>
-                        <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold shadow-sm">React.js</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold shadow-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold shadow-sm">Django</span>
-                        <span class="px-3 py-1 bg-sky-100 text-sky-700 rounded-full text-xs font-semibold shadow-sm">Flutter</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold shadow-sm">React Native</span>
-                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold shadow-sm">Jetpack Compose</span>
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold shadow-sm">Tailwind CSS</span>
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold shadow-sm">Bootstrap</span>
-                    </div>
-                </div>
-
-                <!-- Tools, ERP & System -->
-                <div class="space-y-3">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-pink-600 flex items-center gap-2"><i class="fas fa-tools"></i> ERP, UI/UX & Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold shadow-sm">Odoo ERP</span>
-                        <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold shadow-sm">Figma (UI/UX)</span>
-                        <span class="px-3 py-1 bg-slate-200 text-slate-700 rounded-full text-xs font-semibold shadow-sm">MySQL</span>
-                        <span class="px-3 py-1 bg-slate-200 text-slate-700 rounded-full text-xs font-semibold shadow-sm">PostgreSQL</span>
-                        <span class="px-3 py-1 bg-slate-200 text-slate-700 rounded-full text-xs font-semibold shadow-sm">Git & GitHub</span>
-                        <span class="px-3 py-1 bg-slate-200 text-slate-700 rounded-full text-xs font-semibold shadow-sm">Postman</span>
-                        <span class="px-3 py-1 bg-slate-200 text-slate-700 rounded-full text-xs font-semibold shadow-sm">IT Support</span>
-                    </div>
-                </div>
-
-                <!-- Soft Skills -->
-                <div class="space-y-3">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-emerald-600 flex items-center gap-2"><i class="fas fa-user-check"></i> Soft Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold shadow-sm">Problem Solving</span>
-                        <span class="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-semibold shadow-sm">Cross-Functional Collaboration</span>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold shadow-sm">Fast Learner</span>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold shadow-sm">Attention to Detail</span>
-                        <span class="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-xs font-semibold shadow-sm">Effective Communication</span>
-                        <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-semibold shadow-sm">Critical Thinking</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section data-aos="fade-up">
-            <h2 class="text-2xl font-bold mb-8 text-slate-800 tracking-tight flex items-center gap-2"><i class="fas fa-briefcase text-indigo-500"></i> Professional Experience</h2>
-            <div class="space-y-8">
-                <!-- BKPSDM -->
-                <div class="group flex flex-col md:flex-row gap-6 bg-white/60 backdrop-blur-md p-6 rounded-3xl border border-white shadow-lg hover:shadow-xl transition-all">
-                    <div class="overflow-hidden rounded-2xl md:w-1/3 shadow-sm border border-white flex-shrink-0">
-                        <img src="magang.jpg" alt="Dokumentasi Magang BKPSDM" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="md:w-2/3 flex flex-col justify-center">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                            <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition-colors">IT Support & Administrasi (Magang)</h3>
-                            <span class="text-xs font-bold text-white bg-blue-500 px-3 py-1 rounded-full mt-2 md:mt-0 shadow-sm">SEP 2025 - NOV 2025</span>
-                        </div>
-                        <p class="text-blue-600 font-semibold text-sm mb-4">BKPSDM Kabupaten Ciamis</p>
-                        <ul class="list-disc list-inside text-slate-700 text-sm space-y-2 font-medium">
-                            <li>Mengembangkan Sistem Informasi Penomoran Surat menggunakan PHP Native dan MySQL.</li>
-                            <li>Melakukan pemeliharaan, troubleshooting, instalasi OS Windows, serta perbaikan perangkat PC/komputer kerja instansi.</li>
-                            <li>Mengelola dan melakukan input data ASN.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Bangkit -->
-                <div class="group flex flex-col md:flex-row gap-6 bg-white/60 backdrop-blur-md p-6 rounded-3xl border border-white shadow-lg hover:shadow-xl transition-all">
-                    <div class="overflow-hidden rounded-2xl md:w-1/3 shadow-sm border border-white flex-shrink-0">
-                        <img src="bangkit.jpg" alt="Dokumentasi Bangkit Academy" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="md:w-2/3 flex flex-col justify-center">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                            <h3 class="text-xl font-bold text-slate-800 group-hover:text-red-500 transition-colors">Mobile Development Cohort & UI/UX Contributor</h3>
-                            <span class="text-xs font-bold text-white bg-red-500 px-3 py-1 rounded-full mt-2 md:mt-0 shadow-sm">SEP 2024 - JAN 2025</span>
-                        </div>
-                        <p class="text-red-500 font-semibold text-sm mb-4">Bangkit Academy (Google, Tokopedia, Gojek, Traveloka)</p>
-                        <ul class="list-disc list-inside text-slate-700 text-sm space-y-2 font-medium">
-                            <li>Merancang antarmuka UI/UX dan user flow menggunakan Figma sesuai Material Design Guidelines.</li>
-                            <li>Mengembangkan aplikasi Android menggunakan Kotlin dan Jetpack Compose.</li>
-                            <li>Berkolaborasi dengan tim lintas bidang untuk merampungkan capstone project.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Matahari -->
-                <div class="group flex flex-col md:flex-row gap-6 bg-white/60 backdrop-blur-md p-6 rounded-3xl border border-white shadow-lg hover:shadow-xl transition-all">
-                    <div class="overflow-hidden rounded-2xl md:w-1/3 shadow-inner border border-white/50 flex-shrink-0 bg-gradient-to-br from-orange-300 to-amber-400 flex items-center justify-center min-h-[12rem]">
-                        <i class="fas fa-store text-6xl text-white opacity-90 transform group-hover:scale-110 transition-transform duration-700 drop-shadow-md"></i>
-                    </div>
-                    <div class="md:w-2/3 flex flex-col justify-center">
-                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                            <h3 class="text-xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors">Ecommerce Intern (PKL)</h3>
-                            <span class="text-xs font-bold text-white bg-orange-500 px-3 py-1 rounded-full mt-2 md:mt-0 shadow-sm">JAN 2021 - MAR 2021</span>
-                        </div>
-                        <p class="text-orange-600 font-semibold text-sm mb-4">PT. Matahari Putra Prima Tbk &bull; Cianjur, Jawa Barat</p>
-                        <ul class="list-disc list-inside text-slate-700 text-sm space-y-2 font-medium">
-                            <li>Participated in a vocational high school internship program (PKL).</li>
-                            <li>Managed stock data entry and inventory using Microsoft Excel.</li>
-                            <li>Supported the team in organizing e-commerce product listings to ensure data accuracy.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section>
-            <h2 class="text-2xl font-bold mb-8 text-slate-800 tracking-tight flex items-center gap-2" data-aos="fade-up"><i class="fas fa-laptop-code text-pink-500"></i> Selected Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- FERINA -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-pink-600 transition-colors">FERINA</h3>
-                    <p class="text-xs text-pink-600 font-bold mb-4 uppercase tracking-wider">Web Application</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed">Sistem monitoring konsumsi TTD untuk remaja putri. Dilengkapi fitur reminder, riwayat konsumsi, skor kepatuhan, dan dashboard analitik.</p>
-                    <div class="mb-6"><a href="https://myferina.com" target="_blank" class="inline-flex items-center gap-2 text-sm text-pink-600 font-bold hover:text-pink-800">Kunjungi myferina.com <i class="fas fa-arrow-right text-xs"></i></a></div>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-pink-700 mt-auto">
-                        <span class="bg-pink-100 px-3 py-1 rounded-full">Laravel</span><span class="bg-pink-100 px-3 py-1 rounded-full">MySQL</span>
-                    </div>
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="#proyek" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-full font-medium transition-all shadow-lg shadow-brand-500/30">
+                        Lihat Proyek &rarr;
+                    </a>
+                    <a href="https://github.com/nmranf12" target="_blank" class="px-5 py-3 bg-white border border-slate-200 text-slate-700 hover:border-brand-600 hover:text-brand-600 rounded-full font-medium transition-all flex items-center gap-2 shadow-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/namiranf" target="_blank" class="px-5 py-3 bg-white border border-slate-200 text-slate-700 hover:border-brand-600 hover:text-brand-600 rounded-full font-medium transition-all flex items-center gap-2 shadow-sm">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
                 </div>
-
-                <!-- RICEAPP -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-green-600 transition-colors">RiceApp</h3>
-                    <p class="text-xs text-green-600 font-bold mb-4 uppercase tracking-wider">Android Mobile App</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed">Capstone Project Bangkit Academy. Mengimplementasikan desain UI/UX interaktif menggunakan Jetpack Compose.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-green-700 mt-auto">
-                        <span class="bg-green-100 px-3 py-1 rounded-full">Kotlin</span><span class="bg-green-100 px-3 py-1 rounded-full">Jetpack Compose</span>
-                    </div>
-                </div>
-
-                <!-- SIBERKAT BJB -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-indigo-600 transition-colors">SIBERKAT BJB</h3>
-                    <p class="text-xs text-indigo-600 font-bold mb-4 uppercase tracking-wider">Web System</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed">Sistem Informasi Pengarsipan Kredit. Platform berbasis web untuk optimalisasi pengelolaan data nasabah dan digitalisasi pengarsipan dokumen kredit.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-indigo-700 mt-auto">
-                        <span class="bg-indigo-100 px-3 py-1 rounded-full">Laravel</span><span class="bg-indigo-100 px-3 py-1 rounded-full">PostgreSQL</span>
-                    </div>
-                </div>
-
-                <!-- TRAVEL AL HIJAZ -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-amber-600 transition-colors">Travel Al Hijaz Ciamis</h3>
-                    <p class="text-xs text-amber-600 font-bold mb-4 uppercase tracking-wider">Company Profile</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed">Pengembangan portal web untuk publikasi informasi dan layanan perjalanan ibadah, mencakup pengerjaan front-end, setup hosting, serta manajemen DNS.</p>
-                    <div class="mb-6"><a href="https://www.alhijazciamis.com/" target="_blank" class="inline-flex items-center gap-2 text-sm text-amber-600 font-bold hover:text-amber-800">Kunjungi website <i class="fas fa-arrow-right text-xs"></i></a></div>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-amber-700 mt-auto">
-                        <span class="bg-amber-100 px-3 py-1 rounded-full">Laravel</span><span class="bg-amber-100 px-3 py-1 rounded-full">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <!-- KLINIK HEWAN -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-cyan-600 transition-colors">Klinik Hewan & Petshop</h3>
-                    <p class="text-xs text-cyan-600 font-bold mb-4 uppercase tracking-wider">Veterinary System</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed">Mengembangkan aplikasi web untuk mendukung pengelolaan informasi dan layanan pendaftaran klinik hewan.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-cyan-700 mt-auto">
-                        <span class="bg-cyan-100 px-3 py-1 rounded-full">Laravel</span><span class="bg-cyan-100 px-3 py-1 rounded-full">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <!-- SISTEM PENOMORAN SURAT BKPSDM -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-teal-600 transition-colors">Penomoran Surat Digital</h3>
-                    <p class="text-xs text-teal-600 font-bold mb-4 uppercase tracking-wider">Government Project</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed">Membangun logika sistem dari dasar untuk otomatisasi tata kelola administrasi dokumen ASN di lingkungan BKPSDM Ciamis.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-teal-700 mt-auto">
-                        <span class="bg-teal-100 px-3 py-1 rounded-full">PHP Native</span>
-                        <span class="bg-teal-100 px-3 py-1 rounded-full">MySQL</span>
-                        <span class="bg-teal-100 px-3 py-1 rounded-full">Bootstrap</span>
-                    </div>
-                </div>
-
-                <!-- SYSTEM LAUNDRY MANAGEMENT -->
-                <div class="p-8 rounded-3xl border border-white bg-white/70 backdrop-blur-md shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col h-full transform hover:-translate-y-2 group md:col-span-2" data-aos="fade-up">
-                    <h3 class="text-xl font-bold mb-2 text-slate-800 group-hover:text-rose-600 transition-colors">System Laundry Management</h3>
-                    <p class="text-xs text-rose-600 font-bold mb-4 uppercase tracking-wider">Academic Project</p>
-                    <p class="text-slate-700 text-sm mb-6 flex-grow font-medium leading-relaxed md:w-2/3">Aplikasi web manajemen operasional laundry berbasis arsitektur MVC. Memiliki fitur pencatatan transaksi pelanggan, penentuan paket layanan, pembaruan status pengerjaan, hingga kalkulasi total biaya otomatis.</p>
-                    <div class="flex flex-wrap gap-2 text-xs font-bold text-rose-700 mt-auto">
-                        <span class="bg-rose-100 px-3 py-1 rounded-full">CodeIgniter</span>
-                        <span class="bg-rose-100 px-3 py-1 rounded-full">PHP</span>
-                        <span class="bg-rose-100 px-3 py-1 rounded-full">MySQL</span>
-                    </div>
-                </div>
-
             </div>
-        </section>
-
-        <!-- Education & Certifications Section -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 pt-16">
-            <section data-aos="fade-right">
-                <h2 class="text-2xl font-bold mb-8 text-slate-800 tracking-tight flex items-center gap-2"><i class="fas fa-graduation-cap text-blue-500"></i> Education</h2>
-                <div class="space-y-6 relative border-l-2 border-blue-200 pl-6">
-                    <div class="relative bg-white/60 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm">
-                        <div class="absolute -left-[35px] top-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-sm"></div>
-                        <h3 class="font-bold text-slate-800 text-lg">S1 Sistem Informasi</h3>
-                        <p class="text-sm text-blue-600 font-semibold mt-1">Universitas Bina Sarana Informatika &bull; 2022 - 2026</p>
+            
+            <div class="relative flex justify-center md:justify-end">
+                <div class="relative w-full max-w-[400px] aspect-square rounded-3xl bg-brand-600 p-2 overflow-hidden shadow-2xl">
+                    <img src="woman.png" alt="Namira" class="w-full h-full object-cover rounded-2xl bg-white">
+                    <div class="absolute bottom-8 left-0 bg-white px-4 py-2 rounded-xl shadow-lg font-mono text-xs font-bold text-slate-700 flex items-center gap-2 transform -translate-x-4">
+                        <span class="text-green-500">*</span> UI/UX
                     </div>
-                    <div class="relative bg-white/60 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm">
-                        <div class="absolute -left-[35px] top-1/2 -translate-y-1/2 w-4 h-4 bg-slate-300 rounded-full border-4 border-white shadow-sm"></div>
-                        <h3 class="font-bold text-slate-800 text-lg">Rekayasa Perangkat Lunak</h3>
-                        <p class="text-sm text-slate-500 font-semibold mt-1">SMKN 1 Cianjur &bull; 2019 - 2022</p>
+                    <div class="absolute top-12 right-0 bg-white w-12 h-12 rounded-xl shadow-lg flex items-center justify-center font-mono font-bold text-slate-700 transform translate-x-4">
+                        &lt;/&gt;
                     </div>
                 </div>
-            </section>
-            
-            <section data-aos="fade-left">
-                <h2 class="text-2xl font-bold mb-8 text-slate-800 tracking-tight flex items-center gap-2"><i class="fas fa-award text-yellow-500"></i> Certifications</h2>
-                <ul class="space-y-4">
-                    <!-- Odoo ERP -->
-                    <li class="group cursor-default bg-white/60 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 flex-shrink-0"><i class="fas fa-certificate"></i></div>
-                        <div>
-                            <h3 class="font-bold text-slate-800">Uji Profisiensi ERP Odoo (Distinguished/Excellent)</h3>
-                            <p class="text-sm text-slate-500 font-medium">PT Jidoka System Indonesia &bull; Januari 2026</p>
-                        </div>
-                    </li>
-                    <li class="group cursor-default bg-white/60 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 flex-shrink-0"><i class="fas fa-certificate"></i></div>
-                        <div><h3 class="font-bold text-slate-800">Aplikasi Android Intermediate</h3><p class="text-sm text-slate-500 font-medium">Dicoding Indonesia &bull; 2024</p></div>
-                    </li>
-                    <li class="group cursor-default bg-white/60 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600 flex-shrink-0"><i class="fas fa-certificate"></i></div>
-                        <div><h3 class="font-bold text-slate-800">Fundamental Aplikasi Android</h3><p class="text-sm text-slate-500 font-medium">Dicoding Indonesia &bull; 2024</p></div>
-                    </li>
-                    <li class="group cursor-default bg-white/60 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-sm hover:shadow-md transition-all flex items-center gap-4">
-                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 flex-shrink-0"><i class="fas fa-certificate"></i></div>
-                        <div><h3 class="font-bold text-slate-800">Member of Presenter LICOVBITECH</h3><p class="text-sm text-slate-500 font-medium">Politeknik LP3I &bull; 2023</p></div>
-                    </li>
-                </ul>
-            </section>
+            </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="tentang" class="py-24 px-6 bg-white border-t border-slate-100">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-4 flex flex-col items-center md:items-start">
+                <div class="w-48 h-48 md:w-full md:h-auto md:aspect-[4/5] rounded-3xl overflow-hidden bg-brand-50 mb-4 shadow-sm border border-slate-100 p-2">
+                    <img src="foto.jpg" alt="Namira" class="w-full h-full object-cover rounded-2xl">
+                </div>
+                <p class="text-sm text-slate-500 font-medium flex items-center gap-2"><i class="fas fa-map-marker-alt"></i> Cianjur, Jawa Barat</p>
+            </div>
+            
+            <div class="md:col-span-8">
+                <div class="tag-pill mb-6">
+                    <span class="text-brand-500">*</span> // tentang
+                </div>
+                <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6 leading-snug">
+                    Berfokus pada Pengembangan Sistem yang Fungsional dan Responsif
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-8">
+                  Saya Namira Nurpatimah, seorang Web & Mobile Developer yang memiliki ketertarikan kuat pada pemecahan masalah melalui kode. Berpengalaman menggunakan teknologi seperti Laravel, PHP, CodeIgniter, Kotlin, serta JavaScript. Saya terbiasa mengembangkan antarmuka pengguna, merancang basis data, dan membangun sistem yang fungsional serta responsif.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="p-4 border border-slate-200 rounded-2xl bg-slate-50">
+                        <p class="text-xs text-slate-500 font-mono mb-1">Fokus</p>
+                        <p class="font-semibold text-slate-800 text-sm">Fullstack & Mobile Dev</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-2xl bg-slate-50">
+                        <p class="text-xs text-slate-500 font-mono mb-1">Pengalaman</p>
+                        <p class="font-semibold text-slate-800 text-sm">±1 Tahun Pengalaman</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-2xl bg-slate-50">
+                        <p class="text-xs text-slate-500 font-mono mb-1">Ketersediaan</p>
+                        <p class="font-semibold text-slate-800 text-sm">Open to Work</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pendidikan Section -->
+    <section id="pendidikan" class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <div class="tag-pill mb-6">
+                <span class="text-brand-500">*</span> // Pendidikan
+            </div>
+            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-10">Riwayat Pendidikan</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm hover:border-brand-500 transition-colors">
+                    <span class="px-3 py-1 bg-brand-50 text-brand-600 font-mono text-xs font-bold rounded-full border border-brand-100">2022 - 2026</span>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mt-4 mb-1">Universitas Bina Sarana Informatika</h3>
+                    <p class="text-brand-600 font-medium text-sm mb-4">S1 Sistem Informasi</p>
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <i class="fas fa-award text-yellow-500"></i> IPK: 3.98
+                    </div>
+                </div>
+
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm hover:border-brand-500 transition-colors">
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 font-mono text-xs font-bold rounded-full border border-slate-200">2019 - 2022</span>
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mt-4 mb-1">SMKN 1 Cianjur</h3>
+                    <p class="text-slate-600 font-medium text-sm mb-4">Rekayasa Perangkat Lunak</p>
+                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                        <i class="fas fa-graduation-cap text-brand-500"></i> Sekolah Menengah Kejuruan
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keahlian / Skills Section -->
+    <section id="keahlian" class="py-24 px-6 bg-white border-t border-slate-200">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-12">Alat & Teknologi</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-laravel text-[#FF2D20] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Laravel</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fas fa-fire text-[#EE4323] text-lg"></i> <span class="font-medium text-slate-700 text-sm">CodeIgniter</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-php text-[#777BB4] text-lg"></i> <span class="font-medium text-slate-700 text-sm">PHP</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-python text-[#3776AB] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Python</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-java text-[#007396] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Java & C++</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-js text-[#F7DF1E] text-lg"></i> <span class="font-medium text-slate-700 text-sm">JavaScript</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-react text-[#61DAFB] text-lg"></i> <span class="font-medium text-slate-700 text-sm">React & Native</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-node-js text-[#339933] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Node.js</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-android text-[#3DDC84] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Kotlin & Jetpack Compose</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fas fa-mobile-alt text-[#02569B] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Flutter</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fas fa-wind text-[#06B6D4] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Tailwind CSS</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-bootstrap text-[#7952B3] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Bootstrap</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fas fa-database text-slate-600 text-lg"></i> <span class="font-medium text-slate-700 text-sm">MySQL & Postgres</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-git-alt text-[#F05032] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Git & GitHub</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fab fa-figma text-[#F24E1E] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Figma & Adobe XD</span>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fas fa-space-shuttle text-[#FF6C37] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Postman</span>
+                </div>
+                  <div class="bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm hover:border-brand-500 transition-colors">
+                    <i class="fas fa-microsoft text-[#FF6C37] text-lg"></i> <span class="font-medium text-slate-700 text-sm">Microsoft Ofiice</span>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-brand-50 border border-brand-100 rounded-3xl p-6 text-left max-w-3xl mx-auto">
+                <p class="font-mono text-sm text-brand-600 font-bold mb-3 flex items-center gap-2"><i class="fas fa-certificate"></i> Sertifikasi Profesional</p>
+                <ul class="text-sm text-slate-700 space-y-2 font-medium">
+                    <li>&bull; Sertifikat Analis Program - BNSP LSP UBSI (2025)</li>
+                    <li>&bull; Sertifikat Programmer Aplikasi - BNSP LSP SMKN 1 Cianjur (2022)</li>
+                    <li>&bull; Uji Profisiensi ERP Odoo (Distinguished/Excellent) - PT Jidoka System Indonesia (2026)</li>
+                    <li>&bull; Belajar Pengembangan Aplikasi Android Intermediate & Fundamental - Dicoding Indonesia</li>
+                    <li>&bull; Belajar Penerapan Machine Learning untuk Android</li>
+                    <li>&bull; Member of Presenter LICOVBITECH 2023</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyek Section  -->
+    <section id="proyek" class="py-24 px-6 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-12">Proyek</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 (FERINA) -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group flex flex-col">
+                    <div class="h-48 bg-slate-100 border-b border-slate-200 relative overflow-hidden shrink-0">
+                        <img src="ferina.png" alt="FERINA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">FERINA</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 grow">Sistem web monitoring konsumsi tablet tambah darah remaja putri. Dilengkapi fitur dashboard analitik.</p>
+                        <p class="font-mono text-xs text-brand-600 font-semibold">Laravel, MySQL</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Travel Al Hijaz) -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group flex flex-col">
+                    <div class="h-48 bg-slate-100 border-b border-slate-200 relative overflow-hidden shrink-0">
+                        <img src="alhijaz.png" alt="Travel Al Hijaz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Travel Al Hijaz</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 grow">Membangun portal company profile travel. Mencakup deployment hosting dan konfigurasi DNS zones.</p>
+                        <p class="font-mono text-xs text-brand-600 font-semibold">Laravel, Bootstrap, MySQL, Tailwind CSS</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 (SIBERKAT BJB) -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group flex flex-col">
+                    <div class="h-48 bg-slate-100 border-b border-slate-200 relative overflow-hidden shrink-0">
+                        <img src="siberkat.png" alt="SIBERKAT BJB" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">SIBERKAT BJB</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 grow">Sistem informasi berbasis web untuk digitalisasi pengarsipan kredit dan pengelolaan data nasabah.</p>
+                        <p class="font-mono text-xs text-brand-600 font-semibold">Laravel, PostgreSQL</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 (Laundry Management - Tetap Ikon karena file tidak ada) -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group flex flex-col">
+                    <div class="h-48 bg-slate-100 border-b border-slate-200 relative overflow-hidden flex items-center justify-center shrink-0">
+                        <i class="fas fa-tshirt text-6xl text-slate-300 group-hover:scale-110 group-hover:text-teal-400 transition-all"></i>
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Laundry Management</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 grow">Aplikasi web operasional laundry berarsitektur MVC untuk pencatatan transaksi dan kalkulasi otomatis.</p>
+                        <p class="font-mono text-xs text-brand-600 font-semibold">CodeIgniter, PHP</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 (Klinik Hewan) -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group flex flex-col">
+                    <div class="h-48 bg-slate-100 border-b border-slate-200 relative overflow-hidden shrink-0">
+                        <img src="klinik.png" alt="Klinik Hewan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Klinik Hewan & Petshop</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 grow">Mengembangkan web untuk mendukung pengelolaan informasi operasional dan layanan pendaftaran.</p>
+                        <p class="font-mono text-xs text-brand-600 font-semibold">Laravel, Tailwind CSS</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 (RiceApp) -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-shadow group flex flex-col">
+                    <div class="h-48 bg-slate-100 border-b border-slate-200 relative overflow-hidden shrink-0">
+                        <img src="riceapp.png" alt="RiceApp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col grow">
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">RiceApp</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 grow">Aplikasi Android native Capstone Project Bangkit Academy. Implementasi UI/UX dengan Material Design.</p>
+                        <p class="font-mono text-xs text-brand-600 font-semibold">Kotlin, Jetpack Compose</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Riwayat Section (The Terminal Theme) -->
+    <section id="riwayat" class="py-24 px-6 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <div class="tag-pill mb-6">
+                <span class="text-brand-500">*</span> // riwayat
+            </div>
+            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-10">Perjalanan karier</h2>
+            
+            <div class="bg-[#0d1117] rounded-2xl shadow-xl overflow-hidden border border-slate-800">
+                <div class="bg-[#161b22] px-4 py-3 flex gap-2 border-b border-slate-800">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                
+                <div class="p-6 md:p-8 font-mono text-sm">
+                    <div class="text-slate-400 mb-8 select-all">
+                        <span class="text-green-400">$</span> git log --oneline --graph
+                    </div>
+                    
+                    <div class="flex gap-4 mb-10 group">
+                        <div class="flex flex-col items-center mt-1">
+                            <div class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_#facc15]"></div>
+                            <div class="w-px h-full bg-slate-700 my-2 group-last:hidden"></div>
+                        </div>
+                        <div>
+                            <div class="mb-1">
+                                <span class="text-yellow-400 font-bold">1a2b3c4</span> 
+                                <span class="text-slate-500 ml-2">Sep 2025 - Nov 2025</span>
+                            </div>
+                            <h3 class="text-white text-lg font-sans font-bold mt-1">
+                                IT Support & Administrasi (Magang) <span class="text-brand-400 font-medium">@ BKPSDM Kab. Ciamis</span>
+                            </h3>
+                            <p class="text-slate-400 font-sans mt-2 leading-relaxed">
+                                Merancang Sistem Informasi Penomoran Surat digital. Melakukan maintenance perangkat, instalasi sistem operasi, dan manajemen data ASN.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 mb-10 group">
+                        <div class="flex flex-col items-center mt-1">
+                            <div class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_#facc15]"></div>
+                            <div class="w-px h-full bg-slate-700 my-2 group-last:hidden"></div>
+                        </div>
+                        <div>
+                            <div class="mb-1">
+                                <span class="text-yellow-400 font-bold">5d6e7f8</span> 
+                                <span class="text-slate-500 ml-2">Sep 2024 - Jan 2025</span>
+                            </div>
+                            <h3 class="text-white text-lg font-sans font-bold mt-1">
+                                Mobile Development Cohort <span class="text-brand-400 font-medium">@ Bangkit Academy</span>
+                            </h3>
+                            <p class="text-slate-400 font-sans mt-2 leading-relaxed">
+                                Merancang UI/UX di Figma dan implementasi antarmuka aplikasi Android (RiceApp) menggunakan Kotlin dan Jetpack Compose.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 group">
+                        <div class="flex flex-col items-center mt-1">
+                            <div class="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_#facc15]"></div>
+                            <div class="w-px h-full bg-slate-700 my-2 group-last:hidden"></div>
+                        </div>
+                        <div>
+                            <div class="mb-1">
+                                <span class="text-yellow-400 font-bold">9g0h1i2</span> 
+                                <span class="text-slate-500 ml-2">Jan 2021 - Mar 2021</span>
+                            </div>
+                            <h3 class="text-white text-lg font-sans font-bold mt-1">
+                                Ecommerce Intern (PKL) <span class="text-brand-400 font-medium">@ PT Matahari Putra Prima</span>
+                            </h3>
+                            <p class="text-slate-400 font-sans mt-2 leading-relaxed">
+                                Mengelola entri data stok dan inventaris menggunakan Excel untuk memastikan akurasi ketersediaan barang e-commerce.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="py-12 text-center relative z-10" data-aos="fade-in">
+    <footer class="py-8 bg-slate-50 border-t border-slate-200 text-center">
         <p class="text-slate-500 text-sm font-medium">&copy; 2026 Namira Nurpatimah.</p>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true, offset: 50 });</script>
 </body>
 </html>
